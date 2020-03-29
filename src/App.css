@@ -2,9 +2,13 @@
   text-align: center;
 }
 
+.amount-per-serving {
+  padding-top: 5px;
+}
+
 .calorie-amount {
   font-size: 36px;
-  padding-left: 135px;
+  text-align: right;
 }
 
 .calorie-info {
@@ -13,7 +17,13 @@
 }
 
 .calories {
-  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calories-string {
+  font-size: 25px;
+  padding-top: 10px;
 }
 
 .food-name {
@@ -53,7 +63,6 @@
 
 .nutrition-warning {
   margin: 10px;
-  padding-top: 15px;
 }
 
 .serving-size {

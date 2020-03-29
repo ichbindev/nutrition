@@ -29,7 +29,6 @@
       ]
     },
     { "amount": 3, "type": "Protein", "unit": "g" }
-    
   ],
   "micros": [
     { "type": "Vitamin D", "amount": 0, "unit": "mcg" },

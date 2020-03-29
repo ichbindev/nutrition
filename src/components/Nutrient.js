@@ -4,7 +4,7 @@ const Nutrient = ({ nutrient, isMacro }) => {
   return (
     <>
       <div className={isMacro ? "macronutrient" : "micronutrient"}>
-        <span class="nutrient">
+        <span className="nutrient">
           {nutrient.type}&nbsp;{`${nutrient.amount}${nutrient.unit}`}
         </span>
       </div>

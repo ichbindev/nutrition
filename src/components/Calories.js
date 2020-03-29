@@ -7,11 +7,11 @@ const Calories = ({ calories }) => {
         <strong>Amount Per Serving</strong>
       </div>
       <div className="calories">
-        <strong>Calories</strong>
+        <div className="calories-string"><strong>Calories</strong></div>
         &nbsp;
-        <span className="calorie-amount">
+        <div className="calorie-amount">
           <strong>{calories}</strong>
-        </span>
+        </div>
       </div>
     </div>
   );

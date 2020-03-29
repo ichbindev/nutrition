@@ -7,13 +7,13 @@
 }
 
 .calorie-amount {
-  font-size: 36px;
+  font-size: 50px;
   text-align: right;
 }
 
 .calorie-info {
   border-top: 10px solid black;
-  margin: 10px;
+  margin: 0 10px;
 }
 
 .calories {
@@ -22,8 +22,8 @@
 }
 
 .calories-string {
-  font-size: 25px;
-  padding-top: 10px;
+  font-size: 36px;
+  padding-top: 12px;
 }
 
 .food-name {
@@ -32,7 +32,7 @@
 
 .nutrients {
   border-top: 5px solid black;
-  margin: 10px;
+  margin: 0 10px;
 }
 
 .nutrition-info {
@@ -42,7 +42,7 @@
   margin: 100px;
 }
 
-.macronutrient .nutrient {
+.macronutrient .major-nutrient {
   font-weight: bold;
 }
 
@@ -50,7 +50,7 @@
 .micronutrient,
 .subnutrient {
   border-top: 1px solid black;
-  padding: 5px;
+  padding: 5px 0;
 }
 
 .micronutrients-label {

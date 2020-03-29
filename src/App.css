@@ -2,9 +2,18 @@
   text-align: center;
 }
 
+.calorie-amount {
+  font-size: 36px;
+  padding-left: 135px;
+}
+
 .calorie-info {
   border-top: 10px solid black;
   margin: 10px;
+}
+
+.calories {
+  font-size: 20px;
 }
 
 .food-name {
@@ -31,7 +40,11 @@
 .micronutrient,
 .subnutrient {
   border-top: 1px solid black;
-  margin: 10px;
+  padding: 5px;
+}
+
+.micronutrients-label {
+  border-bottom: 10px solid black;
 }
 
 .nutrition-facts {
@@ -39,10 +52,12 @@
 }
 
 .nutrition-warning {
-  border-top: 10px solid black;
   margin: 10px;
+  padding-top: 15px;
 }
 
 .serving-size {
   margin: 10px;
 }
+
+/*# sourceMappingURL=App.css.map */

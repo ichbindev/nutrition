@@ -5,7 +5,7 @@
   "macros": [
     {
       "amount": 0,
-      "type": "Fat",
+      "type": "Total Fat",
       "unit": "g",
       "subnutrients": [
         { "type": "Saturated Fat", "amount": 0, "unit": "g" },

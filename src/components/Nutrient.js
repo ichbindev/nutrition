@@ -5,7 +5,8 @@ const Nutrient = ({ nutrient, isMacro }) => {
     <>
       <div className={isMacro ? "macronutrient" : "micronutrient"}>
         <span className="nutrient">
-          {nutrient.type}&nbsp;{`${nutrient.amount}${nutrient.unit}`}
+          <span className="major-nutrient">{nutrient.type}</span>&nbsp;
+          {`${nutrient.amount}${nutrient.unit}`}
         </span>
       </div>
       {nutrient.subnutrients &&

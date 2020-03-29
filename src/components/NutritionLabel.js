@@ -6,7 +6,7 @@ import Servings from "./Servings";
 const NutritionLabel = ({ nutritionInfo }) => {
   const { calories, servingSize, macros, micros, warning } = nutritionInfo;
   return (
-    <>
+    <div className="nutrition-label">
       <h1 className="food-name">{nutritionInfo.name}</h1>
       <div className="nutrition-info">
         <h1 className="nutrition-facts">Nutrition Facts</h1>
@@ -26,7 +26,7 @@ const NutritionLabel = ({ nutritionInfo }) => {
           <div className="nutrition-warning">{warning}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

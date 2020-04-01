@@ -1,0 +1,80 @@
+$border-color: black;
+$basic-margin: 10px;
+$basic-padding: 5px;
+$middle-border: 5px;
+$nutrient-divider: 1px;
+$thick-border: 10px;
+$thin-border: 3px;
+$primary-color: blue;
+$secondary-color: white;
+
+.App {
+  text-align: center;
+}
+
+.amount-per-serving {
+  padding-top: $basic-padding;
+}
+
+.calorie-amount {
+  font-size: 50px;
+  text-align: right;
+}
+
+.calorie-info {
+  border-top: $thick-border solid $border-color;
+  margin: 0 $basic-margin;
+}
+
+.calories {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calories-string {
+  font-size: 36px;
+  padding-top: 12px;
+}
+
+.food-name {
+  margin: $basic-margin;
+}
+
+.nutrients {
+  border-top: $middle-border solid $border-color;
+  margin: 0 $basic-margin;
+}
+
+.nutrition-info {
+  border: $thin-border solid $border-color;
+  width: 300px;
+  text-align: left;
+  margin: 100px;
+}
+
+.macronutrient .major-nutrient {
+  font-weight: bold;
+}
+
+.macronutrient,
+.micronutrient,
+.subnutrient {
+  border-top: $nutrient-divider solid $border-color;
+  padding: $basic-padding 0;
+}
+
+.micronutrients-label {
+  border-bottom: $thick-border solid $border-color;
+}
+
+.nutrition-facts {
+  margin: $basic-margin;
+}
+
+.nutrition-warning {
+  margin: $basic-margin;
+}
+
+.serving-size {
+  margin: $basic-margin;
+}

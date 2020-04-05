@@ -4,7 +4,7 @@ import NutritionLabel from "../components/NutritionLabel";
 const Home = ({ nutritionInfo }) => {
   return (
     <div>
-      <NutritionLabel nutritionInfo={nutritionInfo} />
+      {nutritionInfo.map(food => <NutritionLabel key={food.name} nutritionInfo={food} />)}
     </div>
   );
 };

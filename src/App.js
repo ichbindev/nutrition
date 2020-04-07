@@ -32,5 +32,6 @@ export default App;
  * - Logging schema
  * - User input component
  * - User statistics page
- * - Serving conversion
+ * - Serving unit conversion
+ * - Allow user to create recipes from multiple ingredients
  */

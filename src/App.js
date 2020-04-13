@@ -8,37 +8,41 @@ import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
 
 function App() {
+  const ThemeContext = React.createContext("light");
+
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <Home nutritionInfo={sample} />}
-          />
-          <Route
-            exact
-            path="/log/"
-            render={() => <Log nutritionInfo={sample} />}
-          />
-          <Route
-            exact
-            path="/recipes/"
-            render={() => <Recipes nutritionInfo={sample} />}
-          />
-          <Route path="*" render={() => `Page not found`} />
-        </Switch>
-      </Router>
+      <ThemeContext.Provider value="light">
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Home nutritionInfo={sample} />}
+            />
+            <Route
+              exact
+              path="/log/"
+              render={() => <Log nutritionInfo={sample} />}
+            />
+            <Route
+              exact
+              path="/recipes/"
+              render={() => <Recipes nutritionInfo={sample} />}
+            />
+            <Route path="*" render={() => `Page not found`} />
+          </Switch>
+        </Router>
+      </ThemeContext.Provider>
     </div>
   );
 }
 
 export default App;
 
-/** 
- * TODO: 
+/**
+ * TODO:
  * - Dark Mode option
  * - User management
  * - Logging schema

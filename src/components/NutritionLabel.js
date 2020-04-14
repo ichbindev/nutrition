@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../utilities/consts";
 import Calories from "./Calories";
 import Nutrient from "./Nutrient";
 import Servings from "./Servings";
 
 const NutritionLabel = ({ nutritionInfo }) => {
+  const theme = useContext(ThemeContext);
   const { calories, servingSize, macros, micros, warning } = nutritionInfo;
   return (
     <div className="nutrition-label">

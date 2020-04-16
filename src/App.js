@@ -6,16 +6,18 @@ import Home from "./pages/Home";
 import Log from "./pages/Log";
 import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
-import { ThemeContext, Modes } from "./utilities/consts";
+import { ThemeContext, themes } from "./utilities/consts";
 
 
+
+// export const ThemeContext = React.createContext(themes.light);
 
 function App() {
   return (
     <div className="App">
-      <ThemeContext.Provider value={Modes.light}>
+      <ThemeContext.Provider value={themes.dark}>
         <Home nutritionInfo={sample} />
-        {/* <Router>
+        <Router>
           <Navbar />
           <Switch>
             <Route
@@ -35,7 +37,7 @@ function App() {
             />
             <Route path="*" render={() => `Page not found`} />
           </Switch>
-        </Router> */}
+        </Router>
       </ThemeContext.Provider>
     </div>
   );

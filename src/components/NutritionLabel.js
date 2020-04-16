@@ -1,14 +1,18 @@
 import React, { useContext } from "react";
-import ThemeContext from "../utilities/consts";
+import { ThemeContext } from "../utilities/consts";
+
 import Calories from "./Calories";
 import Nutrient from "./Nutrient";
 import Servings from "./Servings";
 
 const NutritionLabel = ({ nutritionInfo }) => {
   const theme = useContext(ThemeContext);
+
   const { calories, servingSize, macros, micros, warning } = nutritionInfo;
+
   return (
     <div className="nutrition-label">
+      {`Theme: ${theme.foreground}`}
       <h1 className="food-name">{nutritionInfo.name}</h1>
       <div className="nutrition-info">
         <h1 className="nutrition-facts">Nutrition Facts</h1>

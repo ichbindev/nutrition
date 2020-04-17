@@ -10,7 +10,7 @@ import {
   NavbarText
 } from "reactstrap";
 
-const Navbar = () => {
+const Navbar = ({ loggedIn }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -29,7 +29,20 @@ const Navbar = () => {
               <NavLink href="/recipes/">recipes</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Food is made of stuff</NavbarText>
+          <Nav navbar>
+            { 
+              loggedIn ? 
+                <NavLink href="/signout">Sign Out</NavLink>
+              : (
+                <>
+                <NavLink href="/signup">Sign Up</NavLink>
+                <NavLink href="/login">Log In</NavLink>
+                </>
+              ) 
+
+            }
+          </Nav>
+          <NavbarText>food is made of stuff</NavbarText>
         </Collapse>
       </ReactStrapNavbar>
     </div>

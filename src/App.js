@@ -8,17 +8,12 @@ import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
 import { ThemeContext, themes } from "./utilities/consts";
 
-
-
-// export const ThemeContext = React.createContext(themes.light);
-
 function App() {
   return (
     <div className="App">
       <ThemeContext.Provider value={themes.dark}>
-        <Home nutritionInfo={sample} />
+        <Navbar />
         <Router>
-          <Navbar />
           <Switch>
             <Route
               exact
@@ -54,4 +49,7 @@ export default App;
  * - User statistics page
  * - Serving unit conversion
  * - Allow user to create recipes from multiple ingredients
+ * - decide or combine css, sass, stylized components
+ * - animations
+ * - the entire backend
  */

@@ -8,6 +8,11 @@ $thin-border: 3px;
 $primary-color: blue;
 $secondary-color: white;
 
+img {
+  height: 100vh; //100% view height
+  width: 100vw; // 100% view width
+}
+
 .App {
   text-align: center;
 }

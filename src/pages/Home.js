@@ -1,26 +1,14 @@
 import React from "react";
 import NutritionLabel from "../components/NutritionLabel";
 import Carousel from "../components/Carousel";
+import SearchBar from "../components/Searchbar";
 import { HOME } from "../utilities/consts";
 
 const Home = ({ nutritionInfo }) => {
   return (
     <div>
-      <Carousel type={HOME}/>
-      <form>
-        <label className="food-search-input-label" htmlFor="food-search-input">
-          Search for a food:&nbsp;
-        </label>
-        <input
-          className="food-search-input"
-          name="food-search-input"
-          type="text"
-          placeholder="Banana"
-        />
-        <button className="food-search-submit" type="submit">
-          Search
-        </button>
-      </form>
+      <Carousel type={HOME} />
+      <SearchBar />
       {nutritionInfo.map(food => (
         <NutritionLabel key={food.name} nutritionInfo={food} />
       ))}

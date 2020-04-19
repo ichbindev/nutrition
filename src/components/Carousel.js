@@ -10,12 +10,12 @@ import { HOME, homeCarouselItems } from "../utilities/consts";
 
 const getItemsFromType = type => {
   switch (type) {
-    case HOME: 
+    case HOME:
       return homeCarouselItems;
     default:
       return [];
   }
-}
+};
 
 const Carousel = ({ type }) => {
   const items = getItemsFromType(type);

@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import NutritionLog from "../components/NutritionLog";
 
 const Log = () => {
   return (
     <div>
-      You can log stuff here as soon as I implement it.
+      <NutritionLog userNutrionForDay={`TODO`} />
     </div>
-  )
-}
+  );
+};
 
 export default Log;

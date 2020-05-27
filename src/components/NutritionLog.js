@@ -14,8 +14,8 @@ const foodData = [
     id: 1
   },
   {
-    name: 'Lunch', 
-    meal: 'Rice',
+    name: 'Rice', 
+    meal: 'Lunch',
     calories: 120,
     id: 2
   },
@@ -39,20 +39,20 @@ const foodData = [
   }
 ];
 
-const NutritionLog = ({ userNutritionForDay = foodData}) => {
+const NutritionLog = ({ userNutritionForDay }) => {
   return (
     <div className="log-table-container">
       <Table className="log-table">
         <thead>
           <tr>
-            <th>Meal</th>
             <th>Food</th>
             <th>Calories</th>
+            <th>Serving</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-        {userNutritionForDay.map(food => 
+        {userNutritionForDay.forEach(food => 
           <tr>
             <th scope="row">{food.meal}</th>
             <td>{food.name}</td>

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Log from "./pages/Log";
 import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { ThemeContext, themes } from "./utilities/consts";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="*" render={() => `Page not found`} />
           </Switch>
         </Router>
+        <Footer />
       </ThemeContext.Provider>
     </div>
   );

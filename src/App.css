@@ -1,5 +1,5 @@
 img {
-  height: 100vh;
+  height: 75vh;
   width: 100vw;
 }
 
@@ -35,18 +35,6 @@ img {
   margin: 10px;
 }
 
-.nutrients {
-  border-top: 5px solid black;
-  margin: 0 10px;
-}
-
-.nutrition-info {
-  border: 3px solid black;
-  width: 300px;
-  text-align: left;
-  margin: 100px;
-}
-
 .macronutrient .major-nutrient {
   font-weight: bold;
 }
@@ -62,12 +50,31 @@ img {
   border-bottom: 10px solid black;
 }
 
+.nutrients {
+  border-top: 5px solid black;
+  margin: 0 10px;
+}
+
 .nutrition-facts {
   margin: 10px;
 }
 
+.nutrition-info {
+  border: 3px solid black;
+  width: 300px;
+  text-align: left;
+  margin: 100px;
+}
+
 .nutrition-warning {
   margin: 10px;
+}
+
+.page-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: ghostwhite;
 }
 
 .serving-size {

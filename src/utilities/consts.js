@@ -34,4 +34,13 @@ export const themes = {
   }
 };
 
+export const MEAL_DISPLAY_NAMES = Object.freeze(
+  {
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "snacks": "Snacks"
+  }
+);
+
 export const ThemeContext = React.createContext(themes.dark);

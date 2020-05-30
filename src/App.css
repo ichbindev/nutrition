@@ -3,6 +3,10 @@ img {
   width: 100vw;
 }
 
+h3 {
+  margin-left: 10px;
+}
+
 .App {
   text-align: center;
 }

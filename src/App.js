@@ -7,6 +7,7 @@ import Log from "./pages/Log";
 import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Calculator from "./pages/Calculator";
 import { ThemeContext, themes } from "./utilities/consts";
 
 function App() {
@@ -30,6 +31,11 @@ function App() {
               exact
               path="/recipes/"
               render={() => <Recipes nutritionInfo={sample} />}
+            />
+            <Route
+              exact
+              path="/calculator/"
+              render={() => <Calculator nutritionInfo={sample} />}
             />
             <Route path="*" render={() => `Page not found`} />
           </Switch>

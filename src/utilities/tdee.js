@@ -1,4 +1,4 @@
-import ACTIVITY_MULTIPLIERS from "./consts";
+import { ACTIVITY_MULTIPLIERS } from "./consts";
 
 const calculateBMA = (gender, height, weight, age) => {
   const baseBMA = height * 6.25 + weight * 9.99 - age * 4.92;
@@ -23,23 +23,17 @@ export const calculateTDEE = (
   height,
   weight,
   age,
-  activityMultiplier
+  activityMultiplier,
+  imperial
 ) => {
+  // ensure measurements are metric for formula
+  if (imperial) {
+    height = convertInchesToCM(height);
+    weight = convertPoundsToKG(weight);
+  }
   let BMA = calculateBMA(gender, height, weight, age);
   if (activityMultiplier) {
     BMA *= ACTIVITY_MULTIPLIERS[gender][activityMultiplier];
   }
   return BMA;
-};
-
-export const calculateTDEEImperial = (
-  gender,
-  height,
-  weight,
-  age,
-  activityMultiplier
-) => {
-  const heightInCM = convertInchesToCM(height);
-  const weightInKG = convertPoundsToKG(weight);
-  return calculateTDEE(gender, heightInCM, weightInKG, age, activityMultiplier);
 };

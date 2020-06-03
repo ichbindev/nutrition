@@ -13,7 +13,7 @@ const TDEEForm = () => {
   return (
     <>
       {<h1>{tdee ? tdee + " Calories" : "Calculate your TDEE"}</h1>}
-      <Form>
+      <Form className="tdee-form">
         <FormGroup>
           <Label for="height-input">Height</Label>
           <Input

@@ -41,7 +41,6 @@ const NutritionLog = ({ userNutritionForDay }) => {
                     </tr>
                   );
                 })}
-                ;
               </tbody>
             </Table>
           </>

@@ -28,6 +28,9 @@ const Navbar = ({ loggedIn }) => {
             <NavItem>
               <NavLink href="/recipes/">recipes</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/calculator/">calculator</NavLink>
+            </NavItem>
           </Nav>
           <Nav navbar>
             { 

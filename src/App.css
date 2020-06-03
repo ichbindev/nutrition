@@ -39,6 +39,10 @@ h3 {
   margin: 10px;
 }
 
+.log-table-container {
+  text-align: left;
+}
+
 .macronutrient .major-nutrient {
   font-weight: bold;
 }
@@ -86,7 +90,14 @@ h3 {
 }
 
 .log-table-container {
-  text-align: left;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.tdee-form {
+  width: 75%;
+  margin: 10px auto;
+  text-align: center;
 }
 
 /*# sourceMappingURL=App.css.map */

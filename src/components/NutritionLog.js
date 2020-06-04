@@ -3,11 +3,10 @@ import { Table } from "reactstrap";
 import { MEAL_DISPLAY_NAMES } from "../utilities/consts";
 
 const removeLoggedItem = (e) => {
-  console.log("Delete this from the list");
-  console.log(e.target);
+  console.log(e.target.id);
 };
 
-const NutritionLog = ({ userNutritionForDay }) => {
+const NutritionLog = ({ userNutritionForDay, onDelete }) => {
   return (
     <div className="log-table-container">
       {Object.keys(userNutritionForDay).map((meal) => {
@@ -31,10 +30,7 @@ const NutritionLog = ({ userNutritionForDay }) => {
                       <td>{food.calories}</td>
                       <td>{food.amount}</td>
                       <td>
-                        <button
-                          id={food.id}
-                          onClick={(e) => removeLoggedItem(e)}
-                        >
+                        <button id={food.id} onClick={(e) => onDelete(e)}>
                           x
                         </button>
                       </td>

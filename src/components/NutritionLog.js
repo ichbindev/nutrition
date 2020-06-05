@@ -2,10 +2,6 @@ import React from "react";
 import { Table } from "reactstrap";
 import { MEAL_DISPLAY_NAMES } from "../utilities/consts";
 
-const removeLoggedItem = (e) => {
-  console.log(e.target.id);
-};
-
 const NutritionLog = ({ userNutritionForDay, onDelete }) => {
   return (
     <div className="log-table-container">

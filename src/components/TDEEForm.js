@@ -14,40 +14,7 @@ const TDEEForm = () => {
     <>
       {<h1>{tdee ? tdee + " Calories" : "TDEE Calculator"}</h1>}
       <Form className="tdee-form">
-        {/* {!imperialUnits ? ( */} {/* TODO: make work with foot/inch split */}
-        {!false ? (
-          <FormGroup>
-            <Label for="height-input-cm">Height (cm)</Label>
-            <Input
-              type="text"
-              name="height-input-cm"
-              id="height-input-cm"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </FormGroup>) :
-        (<>
-          <FormGroup>
-            <Label for="height-input-ft">Height (ft)</Label>
-            <Input
-              type="text"
-              name="height-input-ft"
-              id="height-input-ft"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="height-input-in">Height (in)</Label>
-            <Input
-              type="text"
-              name="height-input-in"
-              id="height-input-in"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </FormGroup>
-        </>)}
+        <Height setHeight={setHeight} imperialUnits={imperialUnits}/>
         <FormGroup>
           <Label for="weight-input">Weight {imperialUnits ? "(lbs)" : "(kg)"}</Label>
           <Input
@@ -164,5 +131,47 @@ const TDEEForm = () => {
     </>
   );
 };
+
+const Height = ({ imperialUnits, setHeight }) => {
+
+
+  if (imperialUnits) {
+    return (
+    <>
+      <FormGroup>
+        <Label for="height-input-ft">Height (ft)</Label>
+        <Input
+          type="text"
+          name="height-input-ft"
+          id="height-input-ft"
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="height-input-in">Height (in)</Label>
+        <Input
+          type="text"
+          name="height-input-in"
+          id="height-input-in"
+          value={height}
+          onChange={(e) => setHeight(e.target.value)}
+        />
+      </FormGroup>
+    </>
+    )
+  }
+  return (
+  <FormGroup>
+    <Label for="height-input-cm">Height (cm)</Label>
+    <Input
+      type="text"
+      name="height-input-cm"
+      id="height-input-cm"
+      value={height}
+      onChange={(e) => setHeight(e.target.value)}
+    />
+  </FormGroup>)
+}
 
 export default TDEEForm;

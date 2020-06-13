@@ -133,7 +133,28 @@ const TDEEForm = () => {
 };
 
 const Height = ({ imperialUnits, setHeight }) => {
+  const [feet, setFeet] = useState(0);
+  const [inches, setInches] = useState(0);
 
+  const handleFeet = (evt) => {
+    const feet = parseInt(evt.target.value, 10);
+    setFeet(feet);
+    handleImperialHeight(evt);
+  }
+
+  const handleInches = (evt) => {
+    const inches = parseInt(evt.target.value, 10);
+    setInches(inches);
+    handleImperialHeight(evt);
+  }
+
+  const handleImperialHeight = (event) => {
+    // multiply feet by 12
+    // add inches
+    const imperialHeight = (feet * 12) + inches;
+    // convert to cm 
+    setHeight(imperialHeight * 2.54);
+  }
 
   if (imperialUnits) {
     return (
@@ -144,8 +165,8 @@ const Height = ({ imperialUnits, setHeight }) => {
           type="text"
           name="height-input-ft"
           id="height-input-ft"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
+          value={feet}
+          onChange={(e) => handleFeet(e)}
         />
       </FormGroup>
       <FormGroup>
@@ -154,8 +175,8 @@ const Height = ({ imperialUnits, setHeight }) => {
           type="text"
           name="height-input-in"
           id="height-input-in"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
+          value={inches}
+          onChange={(e) => handleInches(e)}
         />
       </FormGroup>
     </>

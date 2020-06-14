@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { calculateTDEE } from "../utilities/tdee";
+import { calculateTDEE, convertInchesToCM } from "../utilities/tdee";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const TDEEForm = () => {
@@ -14,9 +14,15 @@ const TDEEForm = () => {
     <>
       {<h1>{tdee ? tdee + " Calories" : "TDEE Calculator"}</h1>}
       <Form className="tdee-form">
-        <Height setHeight={setHeight} imperialUnits={imperialUnits}/>
+        <Height
+          height={height}
+          setHeight={setHeight}
+          imperialUnits={imperialUnits}
+        />
         <FormGroup>
-          <Label for="weight-input">Weight {imperialUnits ? "(lbs)" : "(kg)"}</Label>
+          <Label for="weight-input">
+            Weight {imperialUnits ? "(lbs)" : "(kg)"}
+          </Label>
           <Input
             type="text"
             name="weight-input"
@@ -132,67 +138,74 @@ const TDEEForm = () => {
   );
 };
 
-const Height = ({ imperialUnits, setHeight }) => {
+const Height = ({ imperialUnits, height, setHeight }) => {
   const [feet, setFeet] = useState(0);
   const [inches, setInches] = useState(0);
 
+  const getValueAsInt = (evt) => {
+    if (evt.target.value === "") {
+      evt.target.value = 0;
+    }
+    return parseInt(evt.target.value, 10);
+  };
+
   const handleFeet = (evt) => {
-    const feet = parseInt(evt.target.value, 10);
+    const feet = getValueAsInt(evt);
     setFeet(feet);
-    handleImperialHeight(evt);
-  }
+    handleImperialHeight();
+  };
 
   const handleInches = (evt) => {
-    const inches = parseInt(evt.target.value, 10);
+    const inches = getValueAsInt(evt);
     setInches(inches);
-    handleImperialHeight(evt);
-  }
+    handleImperialHeight();
+  };
 
-  const handleImperialHeight = (event) => {
+  const handleImperialHeight = () => {
     // multiply feet by 12
     // add inches
-    const imperialHeight = (feet * 12) + inches;
-    // convert to cm 
-    setHeight(imperialHeight * 2.54);
-  }
+    const imperialHeight = feet * 12 + inches;
+    setHeight(imperialHeight);
+  };
 
   if (imperialUnits) {
     return (
-    <>
-      <FormGroup>
-        <Label for="height-input-ft">Height (ft)</Label>
-        <Input
-          type="text"
-          name="height-input-ft"
-          id="height-input-ft"
-          value={feet}
-          onChange={(e) => handleFeet(e)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="height-input-in">Height (in)</Label>
-        <Input
-          type="text"
-          name="height-input-in"
-          id="height-input-in"
-          value={inches}
-          onChange={(e) => handleInches(e)}
-        />
-      </FormGroup>
-    </>
-    )
+      <div className="row imperial-height">
+        <FormGroup className="col-md-6 height-ft">
+          <Label for="height-input-ft">Height (ft)</Label>
+          <Input
+            type="text"
+            name="height-input-ft"
+            id="height-input-ft"
+            value={feet}
+            onChange={(e) => handleFeet(e)}
+          />
+        </FormGroup>
+        <FormGroup className="col-md-6 height-in">
+          <Label for="height-input-in">Height (in)</Label>
+          <Input
+            type="text"
+            name="height-input-in"
+            id="height-input-in"
+            value={inches}
+            onChange={(e) => handleInches(e)}
+          />
+        </FormGroup>
+      </div>
+    );
   }
   return (
-  <FormGroup>
-    <Label for="height-input-cm">Height (cm)</Label>
-    <Input
-      type="text"
-      name="height-input-cm"
-      id="height-input-cm"
-      value={height}
-      onChange={(e) => setHeight(e.target.value)}
-    />
-  </FormGroup>)
-}
+    <FormGroup>
+      <Label for="height-input-cm">Height (cm)</Label>
+      <Input
+        type="text"
+        name="height-input-cm"
+        id="height-input-cm"
+        value={height}
+        onChange={(e) => setHeight(e.target.value)}
+      />
+    </FormGroup>
+  );
+};
 
 export default TDEEForm;

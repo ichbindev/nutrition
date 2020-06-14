@@ -14,7 +14,7 @@ const convertPoundsToKG = (pounds) => {
   return pounds * 0.45359237;
 };
 
-const convertInchesToCM = (inches) => {
+export const convertInchesToCM = (inches) => {
   return inches * 2.54;
 };
 

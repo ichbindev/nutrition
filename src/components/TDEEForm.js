@@ -143,28 +143,25 @@ const Height = ({ imperialUnits, height, setHeight }) => {
   const [inches, setInches] = useState(0);
 
   const getValueAsInt = (evt) => {
-    if (evt.target.value === "") {
-      evt.target.value = 0;
-    }
     return parseInt(evt.target.value, 10);
   };
 
   const handleFeet = (evt) => {
     const feet = getValueAsInt(evt);
-    setFeet(feet);
+    setFeet(feet ? feet : "");
     handleImperialHeight();
   };
 
   const handleInches = (evt) => {
     const inches = getValueAsInt(evt);
-    setInches(inches);
+    setInches(inches ? inches : "");
     handleImperialHeight();
   };
 
   const handleImperialHeight = () => {
     // multiply feet by 12
     // add inches
-    const imperialHeight = feet * 12 + inches;
+    const imperialHeight = (feet * 12) + inches;
     setHeight(imperialHeight);
   };
 

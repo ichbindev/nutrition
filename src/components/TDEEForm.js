@@ -4,12 +4,12 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const TDEEForm = () => {
   const [gender, setGender] = useState("male");
-  const [height, setHeight] = useState(180);
-  const [weight, setWeight] = useState(50);
-  const [age, setAge] = useState(30);
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [age, setAge] = useState("");
   const [multiplier, setMultipler] = useState("sedentary");
   const [imperialUnits, setImperialUnits] = useState(false);
-  const [tdee, setTDEE] = useState(null);
+  const [tdee, setTDEE] = useState("");
   return (
     <>
       {<h1>{tdee ? tdee + " Calories" : "TDEE Calculator"}</h1>}
@@ -24,21 +24,23 @@ const TDEEForm = () => {
             Weight {imperialUnits ? "(lbs)" : "(kg)"}
           </Label>
           <Input
-            type="text"
+            type="number"
             name="weight-input"
             id="weight-input"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
+            placeholder={imperialUnits ? "175" : "80"}
           />
         </FormGroup>
         <FormGroup>
           <Label for="age-input">Age</Label>
           <Input
-            type="text"
+            type="number"
             name="age-input"
             id="age-input"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            placeholder="25"
           />
         </FormGroup>
         <FormGroup>
@@ -139,8 +141,8 @@ const TDEEForm = () => {
 };
 
 const Height = ({ imperialUnits, height, setHeight }) => {
-  const [feet, setFeet] = useState(0);
-  const [inches, setInches] = useState(0);
+  const [feet, setFeet] = useState("");
+  const [inches, setInches] = useState("");
 
   const getValueAsInt = (evt) => {
     return parseInt(evt.target.value, 10);
@@ -171,21 +173,23 @@ const Height = ({ imperialUnits, height, setHeight }) => {
         <FormGroup className="col-md-6 height-ft">
           <Label for="height-input-ft">Height (ft)</Label>
           <Input
-            type="text"
+            type="number"
             name="height-input-ft"
             id="height-input-ft"
             value={feet}
             onChange={(e) => handleFeet(e)}
+            placeholder="5"
           />
         </FormGroup>
         <FormGroup className="col-md-6 height-in">
           <Label for="height-input-in">Height (in)</Label>
           <Input
-            type="text"
+            type="number"
             name="height-input-in"
             id="height-input-in"
             value={inches}
             onChange={(e) => handleInches(e)}
+            placeholder="10"
           />
         </FormGroup>
       </div>
@@ -195,11 +199,12 @@ const Height = ({ imperialUnits, height, setHeight }) => {
     <FormGroup>
       <Label for="height-input-cm">Height (cm)</Label>
       <Input
-        type="text"
+        type="number"
         name="height-input-cm"
         id="height-input-cm"
         value={height}
         onChange={(e) => setHeight(e.target.value)}
+        placeholder="180"
       />
     </FormGroup>
   );

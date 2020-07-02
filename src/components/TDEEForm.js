@@ -180,7 +180,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
             onChange={(e) => handleFeet(e)}
             placeholder="5"
           />
-        </FormGroup>
+        </FormGroup>x
         <FormGroup className="col-md-6 height-in">
           <Label for="height-input-in">Height (in)</Label>
           <Input

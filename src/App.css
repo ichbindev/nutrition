@@ -100,4 +100,17 @@ s .log-table-container {
   text-align: center;
 }
 
+.food-search-submit {
+  transition: transform 0.2s;
+  border-radius: 10px;
+}
+
+.food-search-submit:hover {
+  transform: scale(1.2);
+}
+
+.food-search-input {
+  border-radius: 10px;
+}
+
 /*# sourceMappingURL=App.css.map */

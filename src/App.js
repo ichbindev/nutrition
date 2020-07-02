@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import sample from "./sample.json";
 import "./App.css";
 import Home from "./pages/Home";
+import Journal from "./pages/Journal";
 import Log from "./pages/Log";
 import Recipes from "./pages/Recipes";
 import Navbar from "./components/Navbar";
@@ -26,6 +27,11 @@ function App() {
               exact
               path="/log/"
               render={() => <Log nutritionInfo={sample} />}
+            />
+            <Route
+              exact
+              path="/journal/"
+              render={() => <Journal nutritionInfo={sample} />}
             />
             <Route
               exact

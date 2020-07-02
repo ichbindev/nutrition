@@ -47,9 +47,8 @@ h3 {
 
 .food-name {
   margin: $basic-margin;
-}s
-
-.log-table-container {
+}
+s .log-table-container {
   text-align: left;
 }
 
@@ -108,4 +107,17 @@ h3 {
   width: 75%;
   margin: $basic-margin auto;
   text-align: center;
+}
+
+.food-search-submit {
+  transition: transform 0.2s;
+  border-radius: 10px;
+}
+
+.food-search-submit:hover {
+  transform: scale(1.2);
+}
+
+.food-search-input {
+  border-radius: 10px;
 }

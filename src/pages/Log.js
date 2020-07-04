@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Searchbar from "../components/Searchbar";
 import NutritionLabel from "../components/NutritionLabel";
-
+import SearchResults from "../components/SearchResults";
 
 const Log = ({ nutritionInfo }) => {
   const [food, setFood] = useState(null);
 
   // simulate a network request until backend
-  const onSearch = term => {
+  const onSearch = (term) => {
     const idx = Math.floor(Math.random() * nutritionInfo.length);
     console.log(idx);
     setTimeout(() => setFood(nutritionInfo[idx]), 450);
@@ -15,7 +15,8 @@ const Log = ({ nutritionInfo }) => {
 
   return (
     <div className="log-container">
-      <Searchbar onSearch={onSearch}/>
+      <Searchbar onSearch={onSearch} />
+      {food && <SearchResults />}
       {food && <NutritionLabel nutritionInfo={food} />}
     </div>
   );

@@ -110,7 +110,6 @@ s .log-table-container {
 }
 
 .food-search-submit {
-  transition: transform 0.2s;
   border-radius: 10px;
 }
 
@@ -120,4 +119,12 @@ s .log-table-container {
 
 .food-search-input {
   border-radius: 10px;
+}
+
+.nav-part:hover {
+  transform: scale(1.1);
+}
+
+.log-delete-food:hover {
+  transform: scale(1.1);
 }

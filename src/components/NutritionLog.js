@@ -26,7 +26,7 @@ const NutritionLog = ({ userNutritionForDay, onDelete }) => {
                       <td>{food.calories}</td>
                       <td>{food.amount}</td>
                       <td>
-                        <button id={food.id} onClick={(e) => onDelete(e)}>
+                        <button className="log-delete-food" id={food.id} onClick={(e) => onDelete(e)}>
                           x
                         </button>
                       </td>

@@ -17,7 +17,7 @@ const Log = ({ nutritionInfo }) => {
     <div className="log-container">
       <Searchbar onSearch={onSearch} />
       {food && <SearchResults />}
-      {food && <NutritionLabel nutritionInfo={food} />}
+      {/* {food && <NutritionLabel nutritionInfo={food} />} */}
     </div>
   );
 };

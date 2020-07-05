@@ -110,14 +110,19 @@ s .log-table-container {
 
 .food-search-input {
   border-radius: 10px;
+  padding-left: 5px;
 }
 
 .nav-part:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .log-delete-food:hover {
   transform: scale(1.1);
+}
+
+.search-results {
+  margin: 10px auto;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import NutritionLabel from "../components/NutritionLabel";
+import React from "react";
 import Carousel from "../components/Carousel";
-import SearchBar from "../components/Searchbar";
 import { HOME } from "../utilities/consts";
 
 const Home = () => {
-  
-
   return (
     <div>
       <Carousel type={HOME} />

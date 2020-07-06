@@ -164,7 +164,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
     // multiply feet by 12
     // add inches
     const imperialHeight = (feet * 12) + inches;
-    setHeight(imperialHeight);
+    setHeight(convertInchesToCM(imperialHeight));
   };
 
   if (imperialUnits) {
@@ -180,7 +180,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
             onChange={(e) => handleFeet(e)}
             placeholder="5"
           />
-        </FormGroup>x
+        </FormGroup>
         <FormGroup className="col-md-6 height-in">
           <Label for="height-input-in">Height (in)</Label>
           <Input

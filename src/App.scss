@@ -133,3 +133,11 @@ s .log-table-container {
 .search-results {
   margin: 10px auto;
 }
+
+.table-row:nth-child(odd) {
+  background-color: $secondary-color;
+}
+
+.table-row:hover {
+  background: lightgray;
+}

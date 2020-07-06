@@ -16,18 +16,18 @@ const FancyTable = ({ tableContents = sample }) => {
   return (
     <Table className="fancy-table">
       <thead>
-        <tr>
+        <tr className="table-header-row">
           {header.map((element) => (
-            <th className="table-header">{element}</th>
+            <th className="table-header-cell">{element}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {/* Map each remaining row, then match eatch element to a cell */}
         {contents.map((row) => (
-          <tr>
+          <tr className="table-row">
             {row.map((element) => (
-              <th className="table-body">{element}</th>
+              <th className="table-cell">{element}</th>
             ))}
           </tr>
         ))}

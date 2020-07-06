@@ -125,4 +125,12 @@ s .log-table-container {
   margin: 10px auto;
 }
 
+.table-row:nth-child(odd) {
+  background-color: ghostwhite;
+}
+
+.table-row:hover {
+  background: lightgray;
+}
+
 /*# sourceMappingURL=App.css.map */

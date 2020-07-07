@@ -3,6 +3,9 @@ import { Table } from "reactstrap";
 import { MEAL_DISPLAY_NAMES } from "../utilities/consts";
 
 const NutritionLog = ({ userNutritionForDay, onDelete }) => {
+
+  const fancyTableData = 
+
   return (
     <div className="log-table-container">
       {Object.keys(userNutritionForDay).map((meal) => {
@@ -42,5 +45,15 @@ const NutritionLog = ({ userNutritionForDay, onDelete }) => {
     </div>
   );
 };
+
+function convertLogToFancyTables(userNutritionForDay, onDelete) {
+    // create outer array
+    // iterate through meals
+      // create array to hold the meal
+      // for each food in keys
+        // turn into array of data to display
+        // push  array to array of meals
+    // return 3d array
+}
 
 export default NutritionLog;

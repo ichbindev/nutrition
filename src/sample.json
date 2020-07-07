@@ -3,6 +3,7 @@
     "calories": 110,
     "servingSize": { "amount": 148, "unit": "g" },
     "name": "Potato",
+    "brand": "Mr. Potato Head",
     "macros": [
       {
         "amount": 0,
@@ -47,6 +48,7 @@
     "calories": 95,
     "servingSize": { "amount": 182, "unit": "g" },
     "name": "Apple",
+    "brand": "MacIntosh",
     "macros": [
       {
         "amount": 0.3,

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Searchbar from "../components/Searchbar";
-import NutritionLabel from "../components/NutritionLabel";
 import SearchResults from "../components/SearchResults";
 
 const Log = ({ nutritionInfo }) => {
@@ -9,7 +8,6 @@ const Log = ({ nutritionInfo }) => {
   // simulate a network request until backend
   const onSearch = (term) => {
     const idx = Math.floor(Math.random() * nutritionInfo.length);
-    console.log(idx);
     setTimeout(() => setFood(nutritionInfo[idx]), 450);
   };
 

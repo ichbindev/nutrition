@@ -24,6 +24,7 @@ const NutritionLog = (props) => {
 // converts the users journal into an object with key equal to meal name and value equal to the rows of a fancyTable to display
 function convertLogToFancyTables({ userNutritionForDay, onDelete }) {
   const logHeaders = ["Food", "Calories", "Amount", "Brand", "Delete"];
+
   const meals = {};
   Object.entries(userNutritionForDay).forEach((meal) => {
     const mealTable = [];
@@ -51,7 +52,8 @@ function createRow(food, onDelete) {
 
 function deleteButton(id, onDelete) {
   return (
-    <button className="log-delete-food" id={id} onClick={(e) => onDelete(e)}>
+    <button className="log-delete-food" 
+      id={id} onClick={(e) => onDelete(e)}>
       x
     </button>
   );

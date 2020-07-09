@@ -7,6 +7,7 @@ $thick-border: 10px;
 $thin-border: 3px;
 $primary-color: blue;
 $secondary-color: ghostwhite;
+$table-hover: lightblue; //lightgray;
 
 img {
   height: 75vh; // 75% view height
@@ -139,5 +140,5 @@ s .log-table-container {
 }
 
 .table-row:hover {
-  background: lightgray;
+  background: $table-hover;
 }

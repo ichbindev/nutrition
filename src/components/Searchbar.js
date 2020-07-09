@@ -20,7 +20,7 @@ const Searchbar = ({ onSearch = () => {}}) => {
           placeholder="Banana"
           value={searchTerm}
           onChange={event => setSearchTerm(event.target.value)}
-        />
+        />{' '}
         <button className="food-search-submit" 
           type="submit"
           onClick={event => onSubmit(event)}

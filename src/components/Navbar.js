@@ -35,7 +35,7 @@ const Navbar = ({ loggedIn }) => {
               <NavLink href="/calculator/">calculator</NavLink>
             </NavItem>
           </Nav>
-          <Nav navbar>
+          {/* <Nav navbar>
             { 
               loggedIn ? 
                 <NavLink className="nav-part" href="/signout">Sign Out</NavLink>
@@ -47,7 +47,7 @@ const Navbar = ({ loggedIn }) => {
               ) 
 
             }
-          </Nav>
+          </Nav> */}
           <NavbarText>food is made of stuff</NavbarText>
         </Collapse>
       </ReactStrapNavbar>

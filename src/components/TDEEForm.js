@@ -18,26 +18,19 @@ const TDEEForm = () => {
   const [imperialUnits, setImperialUnits] = useState(false);
   const [tdee, setTDEE] = useState("");
 
-  const handleWeight = (event) => {
-    let currentWeight = parseInt(event.target.value, 10);
-    if (imperialUnits) {
-      currentWeight = convertPoundsToKG(currentWeight);
-    }
-    setWeight(currentWeight);
-  };
-
   const submitTDEE = () => {
+    const fixedWeight = imperialUnits ? convertPoundsToKG(weight) : weight;
     setTDEE(
       calculateTDEE(
         gender,
         height,
-        weight,
+        fixedWeight,
         age,
         multiplier,
         imperialUnits
       )
     )
-  }
+  };
 
   return (
     <>

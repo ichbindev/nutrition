@@ -42,6 +42,7 @@ export const calculateTDEE = (
   activityMultiplier,
   imperial
 ) => {
+  console.log("gender", gender, "\nheight", height, "\nweight", weight, "\nage", age, "\nactivityMultiplier", activityMultiplier, "\nimperial", imperial)
   // ensure measurements are metric for formula
   if (imperial) {
     height = convertInchesToCM(height);

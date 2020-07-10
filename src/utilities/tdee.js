@@ -10,7 +10,7 @@ const calculateBMA = (gender, height, weight, age) => {
   return baseBMA;
 };
 
-const convertPoundsToKG = (pounds) => {
+export const convertPoundsToKG = (pounds) => {
   return pounds * 0.45359237;
 };
 

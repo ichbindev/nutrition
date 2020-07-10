@@ -7,7 +7,7 @@ $thick-border: 10px;
 $thin-border: 3px;
 $primary-color: blue;
 $secondary-color: ghostwhite;
-$table-hover: lightblue; //lightgray;
+$table-hover: lightgray;
 
 img {
   height: 75vh; // 75% view height
@@ -127,8 +127,13 @@ s .log-table-container {
   transform: scale(1.2);
 }
 
+.log-delete-food {
+  padding-bottom: 2px;
+}
+
 .log-delete-food:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  padding-bottom: 3px;
 }
 
 .search-results {

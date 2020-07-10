@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { calculateTDEE, convertInchesToCM } from "../utilities/tdee";
+import {
+  calculateTDEE,
+  convertInchesToCM,
+  convertPoundsToKG,
+} from "../utilities/tdee";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
+// TODO: check bug with weight
 const TDEEForm = () => {
+  // Should look into consolidating this.
+  // Or split into smaller components!
   const [gender, setGender] = useState("male");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
@@ -10,6 +17,28 @@ const TDEEForm = () => {
   const [multiplier, setMultipler] = useState("sedentary");
   const [imperialUnits, setImperialUnits] = useState(false);
   const [tdee, setTDEE] = useState("");
+
+  const handleWeight = (event) => {
+    let currentWeight = parseInt(event.target.value, 10);
+    if (imperialUnits) {
+      currentWeight = convertPoundsToKG(currentWeight);
+    }
+    setWeight(currentWeight);
+  };
+
+  const submitTDEE = () => {
+    setTDEE(
+      calculateTDEE(
+        gender,
+        height,
+        weight,
+        age,
+        multiplier,
+        imperialUnits
+      )
+    )
+  }
+
   return (
     <>
       {<h1>{tdee ? tdee + " Calories" : "TDEE Calculator"}</h1>}
@@ -121,16 +150,7 @@ const TDEEForm = () => {
         </FormGroup>
         <Button
           onClick={() =>
-            setTDEE(
-              calculateTDEE(
-                gender,
-                height,
-                weight,
-                age,
-                multiplier,
-                imperialUnits
-              )
-            )
+            submitTDEE()
           }
         >
           Calculate
@@ -163,7 +183,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
   const handleImperialHeight = () => {
     // multiply feet by 12
     // add inches
-    const imperialHeight = (feet * 12) + inches;
+    const imperialHeight = feet * 12 + inches;
     setHeight(convertInchesToCM(imperialHeight));
   };
 

@@ -6,12 +6,12 @@ const NutritionLog = (props) => {
   const fancyTableData = convertLogToFancyTables(props);
   return (
     <div className="log-table-container">
+      {/* TODO: restructure into one table, figure out meal display */}
       {Object.entries(fancyTableData).map((meal) => {
         const [mealName, tableData] = meal;
         return (
           <>
             <h3>{MEAL_DISPLAY_NAMES[mealName]}</h3>
-            {console.log(mealName, tableData)}
             <FancyTable tableContents={tableData}/>
           </>
         );

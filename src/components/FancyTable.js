@@ -12,7 +12,7 @@ const FancyTable = ({ tableContents = sample }) => {
 
   const header = tableContents[0];
   const contents = tableContents.splice(1);
-  console.log(contents);
+  
   return (
     <Table className="fancy-table">
       <thead>

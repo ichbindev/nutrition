@@ -26,15 +26,14 @@ const TDEEForm = () => {
         height,
         fixedWeight,
         age,
-        multiplier,
-        imperialUnits
+        multiplier
       )
     )
   };
 
   return (
     <>
-      {<h1>{tdee ? tdee + " Calories" : "TDEE Calculator"}</h1>}
+      {<h1>{tdee ? parseInt(tdee, 10) + " Calories" : "TDEE Calculator"}</h1>}
       <Form className="tdee-form">
         <Height
           height={height}
@@ -164,19 +163,24 @@ const Height = ({ imperialUnits, height, setHeight }) => {
   const handleFeet = (evt) => {
     const feet = getValueAsInt(evt);
     setFeet(feet ? feet : "");
-    handleImperialHeight();
+    handleImperialHeight(feet, "feet");
   };
 
   const handleInches = (evt) => {
     const inches = getValueAsInt(evt);
     setInches(inches ? inches : "");
-    handleImperialHeight();
+    handleImperialHeight(inches, "inches");
   };
 
-  const handleImperialHeight = () => {
-    // multiply feet by 12
-    // add inches
-    const imperialHeight = feet * 12 + inches;
+  const handleImperialHeight = (amount, unit) => {
+    // TODO: reading state too fast after setting it. refactor this away
+    let imperialHeight;
+    if (unit === "inches") {
+      imperialHeight = (feet * 12) + amount;
+    } else {
+      imperialHeight = (amount * 12) + inches;
+    }
+    
     setHeight(convertInchesToCM(imperialHeight));
   };
 

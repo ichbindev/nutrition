@@ -39,15 +39,9 @@ export const calculateTDEE = (
   height,
   weight,
   age,
-  activityMultiplier,
-  imperial
+  activityMultiplier
 ) => {
-  console.log("gender", gender, "\nheight", height, "\nweight", weight, "\nage", age, "\nactivityMultiplier", activityMultiplier, "\nimperial", imperial)
-  // ensure measurements are metric for formula
-  if (imperial) {
-    height = convertInchesToCM(height);
-    weight = convertPoundsToKG(weight);
-  }
+  // console.log("gender", gender, "\nheight", height, "\nweight", weight, "\nage", age, "\nactivityMultiplier", activityMultiplier)
   let BMA = calculateBMA(gender, height, weight, age);
   if (activityMultiplier) {
     BMA *= ACTIVITY_MULTIPLIERS[gender][activityMultiplier];

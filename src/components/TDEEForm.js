@@ -15,7 +15,7 @@ const TDEEForm = () => {
   const [weight, setWeight] = useState("");
   const [age, setAge] = useState("");
   const [multiplier, setMultipler] = useState("sedentary");
-  const [imperialUnits, setImperialUnits] = useState(false);
+  const [imperialUnits, setImperialUnits] = useState(true);
   const [tdee, setTDEE] = useState("");
 
   const submitTDEE = () => {
@@ -180,7 +180,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
     } else {
       imperialHeight = (amount * 12) + inches;
     }
-    
+
     setHeight(convertInchesToCM(imperialHeight));
   };
 

@@ -115,7 +115,7 @@ s .log-table-container {
 }
 
 .food-search-submit:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .food-search-input {
@@ -146,4 +146,16 @@ s .log-table-container {
 
 .table-row:hover {
   background: $table-hover;
+}
+
+.food-search-input:hover {
+  transform: scale(1.1);
+}
+
+.fancy-table {
+  width: 86% !important; // TODO: figure out how to get scss applied after bootstrap  
+  margin: 0 auto;
+  border: 1px solid $table-hover;
+  border-radius: 5px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
 }

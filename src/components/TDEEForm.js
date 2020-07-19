@@ -34,6 +34,7 @@ const TDEEForm = () => {
   return (
     <>
       {<h1>{tdee ? parseInt(tdee, 10) + " Calories" : "TDEE Calculator"}</h1>}
+      <p className="tdee-explanation">Total Daily Energy Expenditure (TDEE) is the number of calories you burn a day. Eating roughly this amount of calories every day will maintain your current weight. By eating less calories than your TDEE you can lose weight. Eating 500 calories under your TDEE a day will allow you to lose weight at a rate of roughly 1 pound per week.</p>
       <Form className="tdee-form">
         <Height
           height={height}

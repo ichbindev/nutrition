@@ -42,7 +42,7 @@ const TDEEForm = () => {
           imperialUnits={imperialUnits}
         />
         <FormGroup>
-          <Label for="weight-input">
+          <Label htmlFor="weight-input">
             Weight {imperialUnits ? "(lbs)" : "(kg)"}
           </Label>
           <Input
@@ -55,7 +55,7 @@ const TDEEForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="age-input">Age</Label>
+          <Label htmlFor="age-input">Age</Label>
           <Input
             type="number"
             name="age-input"
@@ -66,7 +66,7 @@ const TDEEForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="activity-level">What is your activity level?</Label>
+          <Label htmlFor="activity-level">What is your activity level?</Label>
           <Input
             type="select"
             name="activity-level"
@@ -189,7 +189,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
     return (
       <div className="row imperial-height">
         <FormGroup className="col-md-6 height-ft">
-          <Label for="height-input-ft">Height (ft)</Label>
+          <Label htmlFor="height-input-ft">Height (ft)</Label>
           <Input
             type="number"
             name="height-input-ft"
@@ -200,7 +200,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
           />
         </FormGroup>
         <FormGroup className="col-md-6 height-in">
-          <Label for="height-input-in">Height (in)</Label>
+          <Label htmlFor="height-input-in">Height (in)</Label>
           <Input
             type="number"
             name="height-input-in"
@@ -215,7 +215,7 @@ const Height = ({ imperialUnits, height, setHeight }) => {
   }
   return (
     <FormGroup>
-      <Label for="height-input-cm">Height (cm)</Label>
+      <Label htmlFor="height-input-cm">Height (cm)</Label>
       <Input
         type="number"
         name="height-input-cm"
